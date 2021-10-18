@@ -1,6 +1,6 @@
 name: keyboard_listener
 version: "2.0.0"
-description: Keyboard listener created only on Flutter
+description: A Flutter plugin that helps to listen keyboard state (if it's visible or hidden)
 repository: "https://github.com/surfstudio/flutter-keyboard-listener"
 issue_tracker: "https://github.com/surfstudio/flutter-keyboard-listener/issues"
 publish_to: none

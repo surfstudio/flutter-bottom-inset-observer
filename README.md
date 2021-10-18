@@ -4,7 +4,7 @@
 
 This package made by [Surf](https://surf.ru).
 
-## About
+## Description
 
 Keyboard listener created only on Flutter
 
@@ -18,6 +18,59 @@ dependencies:
 ```
 
 You can use both `stable` and `dev` versions of the package listed above in the badges bar.
+
+## Example
+
+```dart
+late KeyboardListener _keyboardListener;
+
+@override
+void initState() {
+  super.initState();
+  _keyboardListener = KeyboardListener()
+    ..addListener(onChange: _keyboardHandle);
+}
+
+void _keyboardHandle(bool isVisible) {
+  setState(() {
+    _isVisible = isVisible;
+  });
+}
+
+@override
+void dispose() {
+  _keyboardListener.dispose();
+  super.dispose();
+}
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text(widget.title),
+    ),
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(_isVisible ? 'Visible' : 'hidden'),
+        const SizedBox(height: 50),
+        const TextField(),
+        const SizedBox(height: 50),
+        ElevatedButton(
+          onPressed: () {
+            if (FocusManager.instance.primaryFocus != null) {
+              FocusManager.instance.primaryFocus!.unfocus();
+            } else {
+              FocusScope.of(context).requestFocus(FocusNode());
+            }
+          },
+          child: const Text('Reset focus'),
+        ),
+      ],
+    ),
+  );
+}
+```
 
 ## Changelog
 

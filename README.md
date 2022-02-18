@@ -20,6 +20,7 @@ dependencies:
 ```
 
 ## Example
+As an example, this package can be used to track the presence of a keyboard and handle its visibility status
 ```dart
   String _status = '';
 

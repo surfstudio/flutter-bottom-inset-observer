@@ -12,4 +12,4 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export 'package:keyboard_listener/src/keyboard_listener.dart';
+export 'package:bottom_inset_observer/src/bottom_inset_observer.dart';

@@ -1,6 +1,6 @@
-name: keyboard_listener
+name: bottom_inset_observer
 version: "2.0.0"
-description: A Flutter plugin that helps to listen keyboard state (if it's visible or hidden)
+description: A Flutter plugin that helps to listen bottom insets changes (delta since last change, current inset)
 repository: "https://github.com/surfstudio/flutter-keyboard-listener"
 issue_tracker: "https://github.com/surfstudio/flutter-keyboard-listener/issues"
 publish_to: none
@@ -24,6 +24,6 @@ custom:
   is_stable: false
   unstable_version:
   is_plugin: false
-  path: keyboard_listener
+  path: bottom_inset_observer
   hostUrl:
   separate_repo_url:

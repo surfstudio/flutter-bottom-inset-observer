@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/material.dart' hide KeyboardListener;
-import 'package:keyboard_listener/keyboard_listener.dart';
+import 'package:bottom_inset_observer/bottom_inset_observer.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,32 +36,37 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  final String title;
+
   const MyHomePage({
     required this.title,
     Key? key,
   }) : super(key: key);
-
-  final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool _isVisible = false;
+  String _status = '';
 
-  late KeyboardListener _keyboardListener;
+  bool _isVisible = false;
+  late BottomInsetObserver _insetObserver;
 
   @override
   void initState() {
     super.initState();
-    _keyboardListener = KeyboardListener()
-      ..addListener(onChange: _keyboardHandle);
+
+    /// Create instance of the observer and add changes listener
+    /// Note: if viewInsets.bottom > 0 -> handler called immediately
+    /// with current inset and delta == 0
+    _insetObserver = BottomInsetObserver()..addListener(_keyboardHandle);
   }
 
   @override
   void dispose() {
-    _keyboardListener.dispose();
+    /// Unregisters the observer observer and remove all listeners
+    _insetObserver.dispose();
     super.dispose();
   }
 
@@ -72,9 +77,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(_isVisible ? 'Visible' : 'hidden'),
+          const SizedBox(height: 50),
+          Text(_isVisible ? 'Visible' : 'Hidden'),
+          Text('Change status: $_status'),
           const SizedBox(height: 50),
           const TextField(),
           const SizedBox(height: 50),
@@ -88,14 +94,31 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             child: const Text('Reset focus'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              /// You can remove listener manually
+              _insetObserver.removeListener(_keyboardHandle);
+            },
+            child: const Text('Remove listener'),
+          ),
         ],
       ),
     );
   }
 
-  void _keyboardHandle(bool isVisible) {
+  /// Inset change handler
+  /// Will be called when subscribing if there is an inset > 0,
+  /// further on every inset change
+  void _keyboardHandle(BottomInsetChanges change) {
     setState(() {
-      _isVisible = isVisible;
+      /// getting current inset and check current status
+      /// of keyboard visability
+      _isVisible = change.currentInset > 0;
+
+      /// get delta since last change and check current status of changes
+      if (change.delta == 0) _status = 'idle';
+      if (change.delta > 0) _status = 'increase';
+      if (change.delta < 0) _status = 'decrease';
     });
   }
 }

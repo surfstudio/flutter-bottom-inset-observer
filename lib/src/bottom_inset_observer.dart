@@ -85,6 +85,7 @@ class BottomInsetObserver extends WidgetsBindingObserver {
 /// Representation of changes in bottom view inset
 /// [delta] difference in values between previous and new
 /// [currentInset] current inset value
+/// all values in physicals pixels
 class BottomInsetChanges {
   final double delta;
 

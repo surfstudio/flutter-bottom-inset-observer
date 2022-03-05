@@ -17,6 +17,7 @@ void main() {
 
   testWidgets('Change listener test', (tester) async {
     final testBinding = tester.binding;
+    final pixelRatio = testBinding.window.devicePixelRatio;
     testBinding.window.viewInsetsTestValue = const FakeWindowPadding();
 
     late BottomInsetChanges currentChange;
@@ -29,22 +30,22 @@ void main() {
     testBinding.window.viewInsetsTestValue =
         const FakeWindowPadding(bottom: 25);
 
-    expect(currentChange.currentInset, 25);
-    expect(currentChange.delta, 25);
+    expect(currentChange.currentInset, moreOrLessEquals(25 / pixelRatio));
+    expect(currentChange.delta, moreOrLessEquals(25 / pixelRatio));
 
     testBinding.window.viewInsetsTestValue =
         const FakeWindowPadding(bottom: 35);
 
-    expect(currentChange.currentInset, 35);
-    expect(currentChange.delta, 10);
+    expect(currentChange.currentInset, moreOrLessEquals(35 / pixelRatio));
+    expect(currentChange.delta, moreOrLessEquals(10 / pixelRatio));
 
     _insetObserver.removeListener(onChange);
 
     testBinding.window.viewInsetsTestValue =
         const FakeWindowPadding(bottom: 45);
 
-    expect(currentChange.currentInset, 35);
-    expect(currentChange.delta, 10);
+    expect(currentChange.currentInset, moreOrLessEquals(35 / pixelRatio));
+    expect(currentChange.delta, moreOrLessEquals(10 / pixelRatio));
   });
 
   testWidgets('Change listener calls when inset > 0', (tester) async {

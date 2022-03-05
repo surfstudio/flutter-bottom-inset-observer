@@ -59,14 +59,16 @@ class BottomInsetObserver extends WidgetsBindingObserver {
     final instance = WidgetsBinding.instance;
     if (instance != null) {
       instance.addObserver(this);
-      _currentInset = instance.window.viewInsets.bottom;
+      _currentInset =
+          instance.window.viewInsets.bottom / instance.window.devicePixelRatio;
     }
   }
 
   /// Callculate changes in bottom insets
   void _listener() {
     if (WidgetsBinding.instance == null) return;
-    final newInset = WidgetsBinding.instance!.window.viewInsets.bottom;
+    final newInset = WidgetsBinding.instance!.window.viewInsets.bottom /
+        WidgetsBinding.instance!.window.devicePixelRatio;
     _onChange(BottomInsetChanges(
       currentInset: newInset,
       delta: newInset - (_currentInset ?? newInset),
@@ -85,7 +87,6 @@ class BottomInsetObserver extends WidgetsBindingObserver {
 /// Representation of changes in bottom view inset
 /// [delta] difference in values between previous and new
 /// [currentInset] current inset value
-/// all values in physicals pixels
 class BottomInsetChanges {
   final double delta;
 

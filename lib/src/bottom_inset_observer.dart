@@ -69,9 +69,11 @@ class BottomInsetObserver extends WidgetsBindingObserver {
     if (WidgetsBinding.instance == null) return;
     final newInset = WidgetsBinding.instance!.window.viewInsets.bottom /
         WidgetsBinding.instance!.window.devicePixelRatio;
+    final delta = newInset - (_currentInset ?? newInset);
+    if (delta == 0) return;
     _onChange(BottomInsetChanges(
       currentInset: newInset,
-      delta: newInset - (_currentInset ?? newInset),
+      delta: delta,
     ));
     _currentInset = newInset;
   }

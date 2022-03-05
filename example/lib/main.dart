@@ -116,7 +116,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _isVisible = change.currentInset > 0;
 
       /// get delta since last change and check current status of changes
-      if (change.delta == 0) _status = 'idle';
       if (change.delta > 0) _status = 'increase';
       if (change.delta < 0) _status = 'decrease';
     });

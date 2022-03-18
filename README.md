@@ -6,7 +6,7 @@ This package made by [Surf](https://surf.ru).
 
 ## Description
 
-Keyboard listener created only on Flutter
+BottomInsetObserver - пакет для отслеживания изменений нижнего отступа (viewInsets.bottom) с помощью callBack функций.
 
 ## Installation
 
@@ -14,63 +14,88 @@ Add `keyboard_listener` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  keyboard_listener: ^2.0.0
+  keyboard_listener:
+    git:
+      url: git://github.com/surfstudio/flutter-keyboard-listener.git
 ```
-
-You can use both `stable` and `dev` versions of the package listed above in the badges bar.
 
 ## Example
-
+As an example, this package can be used to track the presence of a keyboard and handle its visibility status
 ```dart
-late KeyboardListener _keyboardListener;
+  String _status = '';
 
-@override
-void initState() {
-  super.initState();
-  _keyboardListener = KeyboardListener()
-    ..addListener(onChange: _keyboardHandle);
-}
+  bool _isVisible = false;
+  late BottomInsetObserver _insetObserver;
 
-void _keyboardHandle(bool isVisible) {
-  setState(() {
-    _isVisible = isVisible;
-  });
-}
+  @override
+  void initState() {
+    super.initState();
 
-@override
-void dispose() {
-  _keyboardListener.dispose();
-  super.dispose();
-}
+    /// Create instance of the observer and add changes listener
+    /// Note: if viewInsets.bottom > 0 -> handler called immediately
+    /// with current inset and delta == 0
+    _insetObserver = BottomInsetObserver()..addListener(_keyboardHandle);
+  }
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text(widget.title),
-    ),
-    body: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(_isVisible ? 'Visible' : 'hidden'),
-        const SizedBox(height: 50),
-        const TextField(),
-        const SizedBox(height: 50),
-        ElevatedButton(
-          onPressed: () {
-            if (FocusManager.instance.primaryFocus != null) {
-              FocusManager.instance.primaryFocus!.unfocus();
-            } else {
-              FocusScope.of(context).requestFocus(FocusNode());
-            }
-          },
-          child: const Text('Reset focus'),
-        ),
-      ],
-    ),
-  );
-}
-```
+  @override
+  void dispose() {
+    /// Unregisters the observer observer and remove all listeners
+    _insetObserver.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Column(
+        children: [
+          const SizedBox(height: 50),
+          Text(_isVisible ? 'Visible' : 'Hidden'),
+          Text('Change status: $_status'),
+          const SizedBox(height: 50),
+          const TextField(),
+          const SizedBox(height: 50),
+          ElevatedButton(
+            onPressed: () {
+              if (FocusManager.instance.primaryFocus != null) {
+                FocusManager.instance.primaryFocus!.unfocus();
+              } else {
+                FocusScope.of(context).requestFocus(FocusNode());
+              }
+            },
+            child: const Text('Reset focus'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              /// You can remove listener manually
+              _insetObserver.removeListener(_keyboardHandle);
+            },
+            child: const Text('Remove listener'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Inset change handler
+  /// Will be called when subscribing if there is an inset > 0,
+  /// further on every inset change
+  void _keyboardHandle(BottomInsetChanges change) {
+    setState(() {
+      /// getting current inset and check current status
+      /// of keyboard visability
+      _isVisible = change.currentInset > 0;
+
+      /// get delta since last change and check current status of changes
+      if (change.delta == 0) _status = 'idle';
+      if (change.delta > 0) _status = 'increase';
+      if (change.delta < 0) _status = 'decrease';
+    });
+  }
+ ```
 
 ## Changelog
 

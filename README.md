@@ -1,22 +1,28 @@
-# Keyboard Listener
+# Bottom inset observer
 
-[![Build Status](https://shields.io/github/workflow/status/surfstudio/SurfGear/build?logo=github&logoColor=white)](https://github.com/surfstudio/SurfGear/tree/main/packages/keyboard_listener)
+[![Build Status](https://shields.io/github/workflow/status/surfstudio/flutter-bottom-inset-observer/Analysis?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-bottom-inset-observer)
+[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-bottom-inset-observer?logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudioflutter-bottom-inset-observer)
+[![Pub Version](https://img.shields.io/pub/v/flutter-bottom-inset-observer?logo=dart&logoColor=white)](https://pub.dev/packages/flutter-bottom-inset-observer)
+[![Pub Likes](https://badgen.net/pub/likes/flutter-bottom-inset-observer)](https://pub.dev/packages/flutter-bottom-inset-observer)
+[![Pub popularity](https://badgen.net/pub/popularity/flutter-bottom-inset-observer)](https://pub.dev/packages/flutter-bottom-inset-observer/score)
+![Flutter Platform](https://badgen.net/pub/flutter-platform/flutter-bottom-inset-observer)
 
-This package made by [Surf](https://surf.ru).
+This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) toolkit made by [Surf](https://surf.ru).
+
+[![Surf Logger](https://i.ibb.co/8XD9Cbw/Bunner-LOGO.png)](https://github.com/surfstudio/SurfGear)
 
 ## Description
 
-BottomInsetObserver - пакет для отслеживания изменений нижнего отступа (viewInsets.bottom) с помощью callBack функций.
+BottomInsetObserver - a package for large indent changes (viewInsets.bottom) using the callBack function.
 
 ## Installation
 
-Add `keyboard_listener` to your `pubspec.yaml` file:
+Add `bottom_inset_observer` to your `pubspec.yaml` file:
+
 
 ```yaml
 dependencies:
-  keyboard_listener:
-    git:
-      url: git://github.com/surfstudio/flutter-keyboard-listener.git
+  bottom_inset_observer: $currentVersion$
 ```
 
 ## Example
@@ -103,11 +109,11 @@ All notable changes to this project will be documented in [this file](./CHANGELO
 
 ## Issues
 
-For issues, file directly in the Issues section.
+To report your issues, submit them directly in the [Issues](https://github.com/surfstudio/flutter-bottom-inset-observer/issues) section.
 
 ## Contribute
 
-If you would like to contribute to the package (e.g. by improving the documentation, solving a bug or adding a cool new feature), please review our [contribution guide](../../CONTRIBUTING.md) first and send us your pull request.
+If you would like to contribute to the package (e.g. by improving the documentation, fixing a bug or adding a cool new feature), please review our [contribution guide](/CONTRIBUTING.md) first and send us your pull request.
 
 Your PRs are always welcome.
 

@@ -1,11 +1,12 @@
 # Changelog
 
 ## 3.0.0
+### Added
+* BottomInsetChanges describes how change bottom view inset
 
 ### Changed
-* Renamed package to bottom_inset_observer;
-* Callback function uses BottomInsetChanges as argument;
-* Arguments addListener uses BottomInsetChangeListener instead String? id, KeyboardChangeListener? onChange, VoidCallback? onShow, VoidCallback? onHide;
+* using BottomInsetChanges as argument for callback;
+* one listener instead different callbacks;
 
 ### Removed
 * Callback onShow;

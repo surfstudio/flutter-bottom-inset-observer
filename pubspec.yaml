@@ -1,5 +1,5 @@
 name: bottom_inset_observer
-version: "2.0.0"
+version: "3.0.0"
 description: A Flutter plugin that helps to listen bottom insets changes (delta since last change, current inset)
 repository: "https://github.com/surfstudio/flutter-keyboard-listener"
 issue_tracker: "https://github.com/surfstudio/flutter-keyboard-listener/issues"
@@ -19,11 +19,3 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 flutter:
-
-custom:
-  is_stable: false
-  unstable_version:
-  is_plugin: false
-  path: bottom_inset_observer
-  hostUrl:
-  separate_repo_url:

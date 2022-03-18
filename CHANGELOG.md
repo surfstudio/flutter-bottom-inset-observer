@@ -1,8 +1,13 @@
 # Changelog
+## Unreleased
+
+# 3.0.1
+### Changed
+* internal docs improvement;
 
 ## 3.0.0
 ### Added
-* BottomInsetChanges describes how change bottom view inset
+* BottomInsetChanges describes how change bottom view inset;
 
 ### Changed
 * using BottomInsetChanges as argument for callback;

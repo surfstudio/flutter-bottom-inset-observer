@@ -1,8 +1,15 @@
 # Keyboard Listener
 
 [![Build Status](https://shields.io/github/workflow/status/surfstudio/flutter-bottom-inset-observer/Analysis?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-bottom-inset-observer)
+[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-bottom-inset-observer?logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudioflutter-bottom-inset-observer)
+[![Pub Version](https://img.shields.io/pub/v/flutter-bottom-inset-observer?logo=dart&logoColor=white)](https://pub.dev/packages/flutter-bottom-inset-observer)
+[![Pub Likes](https://badgen.net/pub/likes/flutter-bottom-inset-observer)](https://pub.dev/packages/flutter-bottom-inset-observer)
+[![Pub popularity](https://badgen.net/pub/popularity/flutter-bottom-inset-observer)](https://pub.dev/packages/flutter-bottom-inset-observer/score)
+![Flutter Platform](https://badgen.net/pub/flutter-platform/flutter-bottom-inset-observer)
 
 This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) toolkit made by [Surf](https://surf.ru).
+
+[![Surf Logger](https://i.ibb.co/8XD9Cbw/Bunner-LOGO.png)](https://github.com/surfstudio/SurfGear)
 
 ## Description
 

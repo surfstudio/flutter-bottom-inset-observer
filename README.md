@@ -1,11 +1,11 @@
 # Bottom inset observer
 
 [![Build Status](https://shields.io/github/workflow/status/surfstudio/flutter-bottom-inset-observer/Analysis?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-bottom-inset-observer)
-[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-bottom-inset-observer?logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudioflutter-bottom-inset-observer)
-[![Pub Version](https://img.shields.io/pub/v/flutter-bottom-inset-observer?logo=dart&logoColor=white)](https://pub.dev/packages/flutter-bottom-inset-observer)
-[![Pub Likes](https://badgen.net/pub/likes/flutter-bottom-inset-observer)](https://pub.dev/packages/flutter-bottom-inset-observer)
-[![Pub popularity](https://badgen.net/pub/popularity/flutter-bottom-inset-observer)](https://pub.dev/packages/flutter-bottom-inset-observer/score)
-![Flutter Platform](https://badgen.net/pub/flutter-platform/flutter-bottom-inset-observer)
+[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-bottom-inset-observer?logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudio/bottom_inset_observer)
+[![Pub Version](https://img.shields.io/pub/v/bottom_inset_observer?logo=dart&logoColor=white)](https://pub.dev/packages/bottom_inset_observer)
+[![Pub Likes](https://badgen.net/pub/likes/bottom_inset_observer)](https://pub.dev/packages/bottom_inset_observer)
+[![Pub popularity](https://badgen.net/pub/popularity/bottom_inset_observer)](https://pub.dev/packages/bottom_inset_observer/score)
+![Flutter Platform](https://badgen.net/pub/flutter-platform/bottom_inset_observer)
 
 This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) toolkit made by [Surf](https://surf.ru).
 
@@ -13,7 +13,7 @@ This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) t
 
 ## Description
 
-BottomInsetObserver - a package for large indent changes (viewInsets.bottom) using the callBack function.
+BottomInsetObserver - a package for tracking changes of the bottom margin (viewInsets.bottom) using callBack functions.
 
 ## Installation
 
@@ -24,6 +24,8 @@ Add `bottom_inset_observer` to your `pubspec.yaml` file:
 dependencies:
   bottom_inset_observer: $currentVersion$
 ```
+
+<p>At this moment, the current version of <code>bottom_inset_observer</code> is <a href="https://pub.dev/packages/bottom_inset_obserevr"><img style="vertical-align:middle;" src="https://img.shields.io/pub/v/bottom_inset_observer.svg" alt="bottom_inset_observer version"></a>.</p>
 
 ## Example
 As an example, this package can be used to track the presence of a keyboard and handle its visibility status

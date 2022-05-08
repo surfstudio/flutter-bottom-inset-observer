@@ -1,4 +1,4 @@
-name: "Issue check"
+name: "Checking issue for correctness of described"
 
 on:
   issues:

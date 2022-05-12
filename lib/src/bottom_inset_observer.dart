@@ -57,8 +57,8 @@ class BottomInsetObserver extends WidgetsBindingObserver {
 
   void _init() {
     final instance = WidgetsBinding.instance..addObserver(this);
-      _currentInset =
-          instance.window.viewInsets.bottom / instance.window.devicePixelRatio;
+    _currentInset =
+        instance.window.viewInsets.bottom / instance.window.devicePixelRatio;
   }
 
   /// Calculate changes in bottom insets

@@ -33,7 +33,7 @@ class BottomInsetObserver extends WidgetsBindingObserver {
   }
 
   void dispose() {
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _changeListeners.clear();
   }
 
@@ -56,19 +56,15 @@ class BottomInsetObserver extends WidgetsBindingObserver {
   }
 
   void _init() {
-    final instance = WidgetsBinding.instance;
-    if (instance != null) {
-      instance.addObserver(this);
+    final instance = WidgetsBinding.instance..addObserver(this);
       _currentInset =
           instance.window.viewInsets.bottom / instance.window.devicePixelRatio;
-    }
   }
 
-  /// Callculate changes in bottom insets
+  /// Calculate changes in bottom insets
   void _listener() {
-    if (WidgetsBinding.instance == null) return;
-    final newInset = WidgetsBinding.instance!.window.viewInsets.bottom /
-        WidgetsBinding.instance!.window.devicePixelRatio;
+    final newInset = WidgetsBinding.instance.window.viewInsets.bottom /
+        WidgetsBinding.instance.window.devicePixelRatio;
     final delta = newInset - (_currentInset ?? newInset);
     if (delta == 0) return;
     _onChange(BottomInsetChanges(

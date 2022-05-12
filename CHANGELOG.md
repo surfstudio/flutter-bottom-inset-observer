@@ -1,7 +1,10 @@
 # Changelog
-## Unreleased
 
-# 3.0.1
+## [Unreleased, presumably 3.1.0]
+### Upgrade
+*flutter version;
+
+## 3.0.1
 ### Changed
 * internal docs improvement;
 

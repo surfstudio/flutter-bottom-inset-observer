@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased, presumably 3.1.0]
+## [Unreleased, presumably n.n.n]
+
+## 3.1.0
 ### Upgrade
 * flutter version constraints to above 3.0.0;
 

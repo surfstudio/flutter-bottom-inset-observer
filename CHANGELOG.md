@@ -2,7 +2,7 @@
 
 ## [Unreleased, presumably 3.1.0]
 ### Upgrade
-*flutter version;
+* flutter version constraints to above 3.0.0;
 
 ## 3.0.1
 ### Changed

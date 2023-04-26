@@ -1,6 +1,6 @@
 # Bottom inset observer
 
-[![Build Status](https://shields.io/github/workflow/status/surfstudio/flutter-bottom-inset-observer/Analysis?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-bottom-inset-observer)
+[![Build Status](https://shields.io/github/actions/workflow/status/surfstudio/flutter-bottom-inset-observer/main.yml?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-bottom-inset-observer)
 [![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-bottom-inset-observer?logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudio/bottom_inset_observer)
 [![Pub Version](https://img.shields.io/pub/v/bottom_inset_observer?logo=dart&logoColor=white)](https://pub.dev/packages/bottom_inset_observer)
 [![Pub Likes](https://badgen.net/pub/likes/bottom_inset_observer)](https://pub.dev/packages/bottom_inset_observer)
